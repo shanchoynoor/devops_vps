@@ -22,7 +22,6 @@ cpu_total_1=$(awk '/^cpu / {print $2+$3+$4+$5+$6+$7+$8}' /proc/stat)
 sleep 1
 cpu_idle_2=$(awk '/^cpu / {print $5}' /proc/stat)
 cpu_total_2=$(awk '/^cpu / {print $2+$3+$4+$5+$6+$7+$8}' /proc/stat)
-
 cpu_idle_diff=$((cpu_idle_2 - cpu_idle_1))
 cpu_total_diff=$((cpu_total_2 - cpu_total_1))
 cpu_usage=$((100 * (cpu_total_diff - cpu_idle_diff) / cpu_total_diff))
