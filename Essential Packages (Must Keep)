@@ -1,0 +1,52 @@
+1. Core System & Security
+apt, apt-utils (package management)
+base-files, base-passwd (core system)
+bash, dash (shells)
+coreutils, util-linux (basic commands)
+systemd, systemd-sysv (init system)
+udev (device management)
+openssh-server (remote access
+ufw (firewall)
+fail2ban (security, if installed)
+cron, logrotate (automation & logs)
+rsyslog (logging)
+
+2. Networking
+iproute2, net-tools (network utilities)
+ifupdown (network config, if used)
+dnsutils (dig, nslookup)
+openssl (TLS/SSL)
+ca-certificates (trusted certificates)
+
+3. Storage & Filesystems
+e2fsprogs (ext4 tools)
+btrfs-progs (if using Btrfs)
+ntfs-3g (if using NTFS)
+lvm2 (if using LVM)
+gdisk, fdisk (partitioning)
+
+4. Monitoring & Maintenance
+htop (process viewer)
+strace, lsof (debugging)
+ncdu (disk usage analyzer)
+smartmontools (disk health)
+
+5. Minimal Web/DB Stack (If Needed)
+nginx (or apache2)
+mariadb-server (or postgresql)
+php8.3-fpm (if using PHP)
+certbot (for Let’s Encrypt SSL)
+
+- Development Tools (Remove if Not Needed)
+g++, gcc, make, cmake
+python3-dev, python3-pip
+nodejs, npm, webpack
+php*-dev, php*-cli (unless needed)
+
+- Final Minimal Setup
+A well-optimized server should only have:
+Core OS + Security (systemd, openssh-server, ufw)
+Networking (iproute2, dnsutils)
+Storage Tools (e2fsprogs, lvm2 if needed)
+Monitoring (htop, smartmontools)
+Required Services (e.g., nginx, mariadb-server)
