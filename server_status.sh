@@ -14,6 +14,9 @@ LOGFILE="$(dirname "$0")/logs/system_status.log"
 mkdir -p "$(dirname "$LOGFILE")"
 exec >> "$LOGFILE" 2>&1
 
+# Use Bangladesh time (UTC+6) for all timestamps in this script
+export TZ='Asia/Dhaka'
+
 echo "$(date '+%F %T') [INFO] Running system status script"
 
 # Dependencies
@@ -62,7 +65,7 @@ KERNEL=$($UNAME -r)
 ARCH=$($UNAME -m)
 
 # Get Bangladesh time (UTC+6)
-BDT_TIME=$(TZ='Asia/Dhaka' date '+%b %d, %Y - %I:%M %p (BDT UTC +6)')
+BDT_TIME=$(date '+%b %d, %Y - %I:%M %p (BDT UTC +6)')
 
 # Build Telegram Message
 MESSAGE=$(cat <<EOF
