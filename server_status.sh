@@ -61,9 +61,13 @@ SWAP=$($FREE -h | $AWK '/Swap:/ {print $3 " used of " $2}')
 KERNEL=$($UNAME -r)
 ARCH=$($UNAME -m)
 
+# Get Bangladesh time (UTC+6)
+BDT_TIME=$(TZ='Asia/Dhaka' date '+%b %d, %Y - %I:%M %p (BDT UTC +6)')
+
 # Build Telegram Message
 MESSAGE=$(cat <<EOF
 🔔 Server Status Report
+$BDT_TIME
 
 🖥️  Host: \`$HOSTNAME\`
 🌐 Public IP: \`$PUBLIC_IP\`
