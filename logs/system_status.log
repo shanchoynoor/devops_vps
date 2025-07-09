@@ -1,0 +1,4 @@
+2025-07-09 17:34:07 [INFO] Running system status script
+2025-07-09 17:34:08 [ERROR] Failed to send Telegram message: {"ok":false,"error_code":404,"description":"Not Found"}
+/workspaces/Get_VPS_Server_Status/server_status.sh: line 134: admin@example.com: command not found
+2025-07-09 17:34:08 [ERROR] Failed to send email via msmtp
